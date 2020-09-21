@@ -13,3 +13,18 @@
 // under the License.
 
 package http
+
+import (
+	"testing"
+	"time"
+
+	"github.com/stretchr/testify/assert"
+)
+
+func TestConstantBackoffNextTime(t *testing.T) {
+	constantBackoff := NewConstantBackoff(100*time.Millisecond, 0*time.Millisecond)
+	assert.Equal(t, 100*time.Millisecond, constantBackoff.Next(0))
+	assert.Equal(t, 100*time.Millisecond, constantBackoff.Next(1))
+	assert.Equal(t, 100*time.Millisecond, constantBackoff.Next(2))
+	assert.Equal(t, 100*time.Millisecond, constantBackoff.Next(3))
+}
