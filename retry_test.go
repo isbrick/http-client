@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/issue9/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestRetrierWithExponentialBackoff(t *testing.T) {
