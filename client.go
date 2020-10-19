@@ -12,7 +12,7 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package http
+package httpclient
 
 import (
 	"bytes"
@@ -55,8 +55,8 @@ const (
 
 var _ Client = (*HClient)(nil)
 
-// NewNativeClient returns a new instance of http Client
-func NewNativeClient(opts ...Option) *HClient {
+// NewHClient returns a new instance of http Client
+func NewHClient(opts ...Option) *HClient {
 	client := HClient{
 		timeout:    defaultHTTPTimeout,
 		retryCount: defaultRetryCount,
