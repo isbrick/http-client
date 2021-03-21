@@ -32,7 +32,7 @@ func TestNewHClient(t *testing.T) {
 		panic(err)
 	}
 
-	// Heimdall returns the standard *http.Response object
+	// returns the standard *http.Response object
 	// body, err := ioutil.ReadAll(res.Body)
 	// fmt.Println(string(body))
 	fmt.Println(res.Status)
